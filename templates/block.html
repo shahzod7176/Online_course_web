@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Page</title>
+    <style>
+        /* Foydalanuvchi matnni nusxalay olmasligi uchun */
+        body {
+            user-select: none;
+        }
+    </style>
+    <script>
+        // O'ng tugmani bloklash
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Ctrl + U (View Source) va Ctrl + C (Copy) ni bloklash
+        document.addEventListener('keydown', function (event) {
+            if (event.ctrlKey && (event.key === 'u' || event.key === 'U' || event.key === 'c' || event.key === 'C')) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</head>
+<body>
+<h1>Welcome to My Secure Page</h1>
+<p>This page is protected against copying.</p>
+</body>
+</html>
